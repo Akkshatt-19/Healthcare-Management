@@ -15,10 +15,9 @@ Rails.application.routes.draw do
     collection do
       get 'search_name', to: 'test_centers#search_name'
       get 'search_location', to: 'test_centers#search_location'
-      get 'test_center_through_sub_admin', to: 'test_centers#test_center_through_sub_admin'
     end
   end
-  
+
   resources :reviews
   
   resources :appointments do

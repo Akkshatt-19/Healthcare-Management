@@ -8,11 +8,6 @@ class TestCentersController < ApplicationController
     render json: test_centers
   end
   
-  def test_center_through_sub_admin
-    test_centers = @current_user.test_centers 
-    render json: test_centers
-  end
-  
   def show
     render json: @test_center
   end
