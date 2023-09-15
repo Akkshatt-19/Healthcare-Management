@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   include JwtToken
   before_action :authenticate_user
-
+  
   before_action do
     ActiveStorage::Current.host = request.base_url
   end
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::API
       render json: {message: "You're not authorized for this action"}
     end
   end
-
+  
   def check_patient
     unless @current_user.patient?
       render json: { errors: "You are not authorized to perform this action" }, status: :unauthorized

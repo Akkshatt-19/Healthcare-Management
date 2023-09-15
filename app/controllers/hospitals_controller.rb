@@ -55,7 +55,8 @@ class HospitalsController < ApplicationController
     params.permit(
       :name,
       :location,
-      :user_id
+      :user_id,
+      :image
     )
   end
 end

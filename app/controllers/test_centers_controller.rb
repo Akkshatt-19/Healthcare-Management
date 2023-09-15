@@ -7,22 +7,22 @@ class TestCentersController < ApplicationController
     test_centers = TestCenter.all
     render json: test_centers
   end
-
+  
   def test_center_through_sub_admin
     test_centers = @current_user.test_centers 
     render json: test_centers
   end
-
+  
   def show
     render json: @test_center
   end
-
+  
   def search_name
     name = params[:name]
     test_center = TestCenter.where("name LIKE ?","%#{name}%")
     render json: test_center
   end
-
+  
   def search_location
     location = params[:location]
     test_center = TestCenter.where("location LIKE ?","%#{location}%")

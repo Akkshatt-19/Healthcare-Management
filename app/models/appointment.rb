@@ -3,7 +3,8 @@ class Appointment < ApplicationRecord
   belongs_to :user
   belongs_to :hospital
   belongs_to :test_center
-
+  has_one_attached :image
+  
   validates :user_id, presence: true
   validates :hospital_id, presence: true
   validates :test_center_id, presence: true

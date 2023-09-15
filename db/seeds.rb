@@ -1,8 +1,8 @@
-User.create(name: "Akshat Pegwar", email: "akshatp@shriffle.com", password_digest: "akshat123", role: "admin")
-User.create(name: "Akshat Admin", email: "akshatpegwar5@gmail.com", password_digest: "admin123", role: "admin")
-User.create(name: "Mohit Kumrawat", email: "mohitk@shriffle.com", password_digest: "mohit123", role: "sub_admin")
-User.create(name: "Ritik Dhote", email: "ritikd@shriffle.com", password_digest: "ritik123", role: "health_worker")
-User.create(name: "Ram Kushwah", email: "ramkrishnak@shriffle.com", password_digest: "ram123", role: "patient")
+User.create(name: "Akshat Pegwar", email: "akshatp@shriffle.com", password: "akshat123", role: "admin")
+User.create(name: "Akshat Admin", email: "akshatpegwar5@gmail.com", password: "admin123", role: "admin")
+User.create(name: "Mohit Kumrawat", email: "mohitk@shriffle.com", password: "mohit123", role: "sub_admin")
+User.create(name: "Ritik Dhote", email: "ritikd@shriffle.com", password: "ritik123", role: "health_worker")
+User.create(name: "Ram Kushwah", email: "ramkrishnak@shriffle.com", password: "ram123", role: "patient")
 
 Hospital.create(name: "Apollo Hospital", location: "Scheme no. 78", user_id: 1)
 Hospital.create(name: "Medanta Hospital", location: "Vijay Nagar", user_id: 2)
