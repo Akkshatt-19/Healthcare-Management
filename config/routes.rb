@@ -17,8 +17,11 @@ Rails.application.routes.draw do
       get 'search_location', to: 'test_centers#search_location'
     end
   end
-
+  
   resources :reviews
+  
+  post 'password/forgot', to: 'passwords#forgot'
+  post 'password/reset', to: 'passwords#reset'
   
   resources :appointments do
     member do

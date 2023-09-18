@@ -17,4 +17,15 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     mail(to:@user.email,subject:'User created for Healthcare Mangement')
   end
+
+  def forgot_password(user)
+    @user = user
+    mail(to:@user.email,subject:"Resetting Password for #{@user.name}'s Account")
+  end
+
+  def reset_password(user)
+    @user = user
+    mail(to:@user.email,subject:"Password for #{@user.name}'s Account has been successfully changed")
+  end
+  
 end
