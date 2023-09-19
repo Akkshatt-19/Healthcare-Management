@@ -13,8 +13,8 @@ class UserMailer < ApplicationMailer
     mail(to: @appointment.user.email, subject: 'Appointment Created')
   end
   
-  def user_created
-    @user = params[:user]
+  def user_created(user)
+    @user = user
     mail(to:@user.email,subject:'User created for Healthcare Mangement')
   end
 

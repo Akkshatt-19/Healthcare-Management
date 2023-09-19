@@ -13,6 +13,7 @@ gem "rails", "~> 7.0.7", ">= 7.0.7.2"
 gem "sqlite3", "~> 1.4"
 
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'kaminari', '~> 0.16.3'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"

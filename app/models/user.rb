@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :hospitals
   has_many :test_centers , through: :hospitals
   has_many :appointments
-  
   has_many :reviews
   
   after_create :user_logged_in
@@ -16,7 +15,7 @@ class User < ApplicationRecord
   validates :role, inclusion: { in: ['admin', 'sub_admin','health_worker','patient'] }
   
   def user_logged_in
-    UserMailer.with(user: self).user_created.deliver_now
+    UserMailer.user_created(self).deliver_now
   end
   
   def generate_password_token!

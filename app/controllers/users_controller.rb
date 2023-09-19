@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :check_admin, only:[:update, :destory]
   
   def index
-    users = User.all
+    # users = User.all
+    users = User.page(params[:page]).per(2)
     render json: users
   end
   

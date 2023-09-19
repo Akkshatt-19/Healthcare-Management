@@ -1,5 +1,6 @@
 class PasswordsController < ApplicationController
     before_action :check_mail, only: [:forgot]
+    before_action :check_password, only: [:reset]
     skip_before_action :authenticate_user
 
     def forgot
@@ -32,6 +33,12 @@ class PasswordsController < ApplicationController
     def check_mail
         if params[:email].blank?
             return render json: {error: "Email not present"}
+        end
+    end
+
+    def check_password
+        if params[:password_digest].blank?
+            return render json: {error: "Password can't be empty"}
         end
     end
 
