@@ -14,6 +14,16 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :role, inclusion: { in: ['admin', 'sub_admin','health_worker','patient'] }
   
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "email", "id", "name", "password_digest", "reset_password_sent_at", "reset_password_token", "role", "updated_at"]
+  end
+  
+  
+  def self.ransackable_associations(auth_object = nil)
+    ["appointments", "hospitals", "image_attachment", "image_blob", "reviews", "test_centers"]
+  end
+  
+  
   def user_logged_in
     UserMailer.user_created(self).deliver_now
   end

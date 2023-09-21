@@ -12,3 +12,4 @@ TestCenter.create(name: "Center-1 for Medanta", hospital_id: 2, location: "Vijay
 
 Appointment.create(user_id: 1, description: "Annual Physical", hospital_id: 1, test_center_id: 1)
 Appointment.create(user_id: 2, description: "Blood Test", hospital_id: 2, test_center_id: 2)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

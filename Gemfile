@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 gem 'jwt'
+gem 'activeadmin'
+gem 'devise'
+gem 'sass-rails'
 
 # gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
@@ -13,7 +16,7 @@ gem "rails", "~> 7.0.7", ">= 7.0.7.2"
 gem "sqlite3", "~> 1.4"
 
 gem 'active_model_serializers', '~> 0.10.13'
-gem 'kaminari', '~> 0.16.3'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
