@@ -6,4 +6,8 @@ class Review < ApplicationRecord
     def self.ransackable_attributes(auth_object = nil)
         ["created_at", "feedback", "id", "reviewable_id", "reviewable_type", "updated_at", "user_id"]
     end
+    
+    def self.ransackable_associations(auth_object = nil)
+        ["image_attachment", "image_blob","user"]
+    end
 end

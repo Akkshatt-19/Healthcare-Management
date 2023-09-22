@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :hospitals
   has_many :test_centers , through: :hospitals
   has_many :appointments
+
   has_many :reviews
   
   after_create :user_logged_in

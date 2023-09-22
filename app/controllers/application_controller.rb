@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user
   
   before_action do
-    ActiveStorage::Current.host = request.base_url
+    ActiveStorage::Current.url_options = request.base_url
   end
   
   private 

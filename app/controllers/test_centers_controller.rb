@@ -58,7 +58,8 @@ class TestCentersController < ApplicationController
     params.permit(
       :name,
       :hospital_id,
-      :location
+      :location,
+      :image
     )
   end
 end

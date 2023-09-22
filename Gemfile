@@ -7,7 +7,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'sass-rails'
 
-# gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
@@ -31,7 +31,7 @@ gem "puma", "~> 5.0"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt"
+# gem "bcrypt"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
