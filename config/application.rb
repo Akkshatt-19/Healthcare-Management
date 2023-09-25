@@ -14,6 +14,7 @@ module HealthcareManagement
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.use Rack::MethodOverride
     config.middleware.use ActionDispatch::Flash
+    # config.factory_bot.definition_file_paths = ["custom/factories"]
 
     # Configuration for the application, engines, and railties goes here.
     #

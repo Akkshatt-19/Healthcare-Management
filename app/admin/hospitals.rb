@@ -20,7 +20,7 @@ ActiveAdmin.register Hospital do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :user_id
+      f.input :user
       f.input :location
       f.input :image, as: :file
     end
@@ -32,7 +32,6 @@ ActiveAdmin.register Hospital do
       row :name
       row :location
       row :id
-      row :test_center
       row :image do |hospital|
         image_tag url_for(hospital.image),size: "350x450"
       end

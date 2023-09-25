@@ -21,9 +21,13 @@ class ApplicationController < ActionController::Base
     end
   end
   rescue_from ActiveRecord::RecordNotFound, with: :handle_exception
+  # rescue_from ActiveRecord::ArgumentError,with: :handle_argument_error
   def handle_exception
     render json: { error: 'ID not found' }
   end
+  # def handle_argument_error
+  #   render json: { error: 'Please fill fields correctly' }
+  # end
   
   def check_permission
     unless (@current_user.admin? || @current_user.sub_admin?)

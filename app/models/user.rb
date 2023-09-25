@@ -10,8 +10,9 @@ class User < ApplicationRecord
   has_many :reviews
   
   after_create :user_logged_in
+
   validates :name, presence: true, length: { maximum: 30 }
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password_digest, presence: true
   validates :role, inclusion: { in: ['admin', 'sub_admin','health_worker','patient'] }
   
@@ -23,7 +24,6 @@ class User < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["appointments", "hospitals", "image_attachment", "image_blob", "reviews", "test_centers"]
   end
-  
   
   def user_logged_in
     UserMailer.user_created(self).deliver_now

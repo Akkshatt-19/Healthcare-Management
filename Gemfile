@@ -21,6 +21,11 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+group :development, :test do
+  gem 'rspec-rails', ">= 3.9.0"
+  gem 'factory_bot_rails'
+end 
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
