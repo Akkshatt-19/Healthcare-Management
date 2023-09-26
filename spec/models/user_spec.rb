@@ -2,37 +2,39 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
 
+  before(:all) do
+    @user = FactoryBot.create(:user)
+  end
+
+  after(:all) do
+    @user.destroy
+  end
+
   it "is valid with valid attributes" do
-    user = FactoryBot.create(:user)
-    expect(user).to be_valid
+    expect(@user).to be_valid
   end
 
   it "is not valid without a role" do
-    user = FactoryBot.create(:user)
-    user.role = nil
-    expect(user).to_not be_valid
+    @user.role = nil
+    expect(@user).to_not be_valid
   end
 
   it "is not valid without a name" do
-    user = FactoryBot.create(:user)
-    user.name = nil
-    expect(user).to_not be_valid
+    @user.name = nil
+    expect(@user).to_not be_valid
   end
   it "is not valid without an email" do
-    user = FactoryBot.create(:user)
-    user.email = nil
-    expect(user).to_not be_valid
+    @user.email = nil
+    expect(@user).to_not be_valid
   end
   it "is not valid without a password_digest" do
-    user = FactoryBot.create(:user)
-    user.password_digest = nil
-    expect(user).to_not be_valid
+    @user.password_digest = nil
+    expect(@user).to_not be_valid
   end
 
   it "is not valid with an invalid email format" do
-    user = FactoryBot.create(:user)
-    user.email = 'invalid-email'
-    expect(user).to_not be_valid
+    @user.email = 'invalid-email'
+    expect(@user).to_not be_valid
   end
   
   it "should have many hospitals" do

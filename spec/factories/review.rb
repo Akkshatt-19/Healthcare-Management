@@ -1,9 +1,9 @@
 FactoryBot.define do
     factory :review do
       user_id                { FactoryBot.create(:user).id }
-      reviewable_id          { FactoryBot.create(:hospital).id }
-      reviewable_type        {"Hospital"}
-      sequence(feedback)     {|n|"Feedback #{n}"}
+      association :reviewable, factory: :hospital || :test_center
+      reviewable_type        {reviewable.class.to_s}
+      sequence(:feedback)    {|n|"Feedback #{n}"}
       created_at             { Time.now }
       updated_at             { Time.now }
     end
