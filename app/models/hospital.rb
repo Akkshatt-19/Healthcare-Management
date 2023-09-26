@@ -11,7 +11,7 @@ class Hospital < ApplicationRecord
   
   
   def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "id", "location", "name", "test_centers_id", "updated_at", "user_id"]
+    ["created_at", "id", "location", "name","updated_at", "user_id"]
   end
   
   def self.ransackable_associations(auth_object = nil)

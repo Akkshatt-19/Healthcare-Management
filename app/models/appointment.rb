@@ -7,6 +7,7 @@ class Appointment < ApplicationRecord
   
   validates :user_id, presence: true
   validates :hospital_id, presence: true
+  validates :description, presence: true
   validates :test_center_id, presence: true
   validates :status, inclusion: { in: ['pending', 'scheduled', 'completed'] }
   

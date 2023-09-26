@@ -84,8 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_105925) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "test_centers_id"
-    t.index ["test_centers_id"], name: "index_hospitals_on_test_centers_id"
     t.index ["user_id"], name: "index_hospitals_on_user_id"
   end
 
@@ -124,7 +122,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_105925) do
   add_foreign_key "appointments", "hospitals"
   add_foreign_key "appointments", "test_centers"
   add_foreign_key "appointments", "users"
-  add_foreign_key "hospitals", "test_centers", column: "test_centers_id"
   add_foreign_key "hospitals", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "test_centers", "hospitals"
