@@ -25,6 +25,12 @@ group :development, :test do
   gem 'rspec-rails', ">= 3.9.0"
   gem 'factory_bot_rails'
 end 
+gem 'rails-controller-testing'
+gem 'warden', '~> 1.2', '>= 1.2.9'
+group :test do
+  gem 'shoulda-matchers', '~> 5.0'
+end
+  gem 'simplecov',                    '~> 0.15.1',              require: false
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

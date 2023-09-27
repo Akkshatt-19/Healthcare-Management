@@ -10,6 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
         para "Welcome to Healthcare Management Admin Portal"
       end
     end
+
     columns do
       column do
         panel "Recent Hospital" do
@@ -20,6 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+      
       column do
         panel "Recent Appointments" do
           ul do
@@ -30,6 +32,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+
       column do
         panel "Recent Users" do
           ol do

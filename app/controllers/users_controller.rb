@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, except: [:show, :update]
+  # skip_before_action :authenticate_user, except: [:update]
   before_action :check_admin, only:[:update, :destory]
   
   def index
-    # users = User.all
-    users = User.page(params[:page]).per(2)
+    users = User.all
     render json: users
   end
   
   def show
-    render json: @current_user
+    user = User.find(params[:id])
+    render json: user
   end
   
   def create
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if user.update(user_params)
       render json: user
     else
-      render json: user.errors.full_messages
+      render json: user.errors.full_messages,status: :unprocessable_entity   
     end
   end
   
